@@ -7,18 +7,18 @@
   </head>
   <body>
     <h2>Continue the order</h2>
-    <form action="thank_you.html">
+    <form action="thank_you.html" autocomplete="on">
       <p>
         <label for="email">Email: </label>
-        <input type="text" name="email" id="email" />
+        <input type="text" name="email" id="email" placeholder="example@domain.com" required/>
       </p>
       <p>
         <label for="password">Password: </label>
-        <input type="password" name="password" id="password" />
+        <input type="password" name="password" id="password" required/>
       </p>
       <p>
         <label for="phoneNumber">Phone number: </label>
-        <input type="tel" name="phoneNumber" id="phoneNumber" />
+        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="+9665XXXXXXX"/>
       </p>
       <p>
           <label for="gender">Gender: </label>
@@ -29,6 +29,15 @@
           <p>
               <label for="female">Female: </label>
               <input type="radio" name="male" id="gender">
+          </p>
+          <p>
+            <label for="city">City: </label>
+            <input type="text" name="city" id="city" list="cities">
+            <datalist id="cities">
+              <option value="makkah"></option>
+              <option value="jeddah"></option>
+              <option value="madinah"></option>
+            </datalist>
           </p>
       </p>
       <p>
