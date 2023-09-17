@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: antiquewhite;
+}
+a {
+    color: lightgreen;
+}
+a:visited{
+    color: green;
+}
+a:hover{
+    font-weight: bold;
+}
