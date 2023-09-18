@@ -1,13 +1,60 @@
 body {
-    background-color: black;
+    background: var(--bg-color-mobile, #F3F3F3);
     color: antiquewhite;
 }
+
 a {
     color: lightgreen;
 }
-a:visited{
+
+a:visited {
     color: green;
 }
-a:hover{
+
+a:hover {
     font-weight: bold;
+}
+
+#facebook_icon {
+    /* Vector */
+
+    position: absolute;
+    left: 78.75%;
+    right: 20.5%;
+    top: 0.81%;
+    bottom: 98.29%;
+
+    background: #FFFFFF;
+}
+
+header {
+    /* background-color: #393280; */
+    display: flex;
+    width: 26.875rem;
+    padding: 2.8125rem 1.5rem 1.25rem 1.5rem;
+    align-items: center;
+    gap: 2.8125rem;
+    background: var(--bg-color-website, #FFF);
+}
+
+#search_input {
+    display: flex;
+    /* width: 15.3125rem; */
+    padding: 0.5rem 1.875rem 0.5rem 0.9375rem;
+    align-items: center;
+    gap: 1.125rem;
+    flex-shrink: 0;
+
+    border-radius: 0.75rem;
+    background: #EAEAEA;
+}
+
+#search_text {
+    color: #959494;
+    text-align: center;
+    font-family: Nunito Sans;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
