@@ -1,6 +1,6 @@
 body {
     background: var(--bg-color-mobile, #F3F3F3);
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
 }
 
 a {

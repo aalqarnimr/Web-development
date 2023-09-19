@@ -1,0 +1,16 @@
+Colors
+393280 purple
+FFF5E0  or white
+ED553B orange
+#FF6969
+#BB2525
+#141E46
+
+fonts:
+Montserrat
+ExtraLight 200
+https://fonts.google.com/specimen/Montserrat
+
+Roboto Condensed
+Light 300
+https://fonts.google.com/specimen/Roboto+Condensed
