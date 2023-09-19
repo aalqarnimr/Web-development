@@ -4,11 +4,11 @@ body {
 }
 
 a {
-    color: lightgreen;
+    color: green;
 }
 
 a:visited {
-    color: green;
+    color: darkgreen;
 }
 
 a:hover {
@@ -35,6 +35,7 @@ header {
     align-items: center;
     gap: 2.8125rem;
     background: var(--bg-color-website, #FFF);
+    text-transform: uppercase;
 }
 
 #search_input {
@@ -57,4 +58,16 @@ header {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+tr.top {
+    background-color: gold;
+}
+em {
+    background-color: lightblue;
+}
+
+#the_most_important {
+    background-color: gold;
+    text-transform: uppercase;
 }
