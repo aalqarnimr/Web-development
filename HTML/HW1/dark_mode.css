@@ -404,3 +404,58 @@ font-family: 'Libre Baskerville', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
 }
+
+button {
+    background-color: #000000;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  
+  button:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #04AA6D;
+  }
+  #navigation_bar > img {
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    margin-left: 10px;
+  }
+  #navigation_bar > a {
+    opacity: 0;
+  }
+  #navigation_bar > img:hover{
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+  #navigation_bar a {
+    opacity: 0;
+      }
+  #navigation_bar:hover > a {
+    opacity: 1;
+  }
+  #navigation_bar a:first-of-type {
+    transition-delay: 0s;
+  }
+  
+  #navigation_bar a:nth-of-type(2) {
+    transition-delay: 0.1s;
+  }
+  
+  #navigation_bar a:nth-of-type(3) {
+    transition-delay: 0.2s;
+  }
+  #navigation_bar a:nth-of-type(4) {
+    transition-delay: 0.3s;
+  }
+  #navigation_bar a:nth-of-type(5) {
+    transition-delay: 0.4s;
+  }
+  
