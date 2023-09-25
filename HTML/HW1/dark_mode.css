@@ -458,4 +458,30 @@ button {
   #navigation_bar a:nth-of-type(5) {
     transition-delay: 0.4s;
   }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+}
+      
+.loading::after {
+    content: "";
+    width: 37.6px;
+    height: 37.6px;
+    border: 8px solid #bbdbfc;
+    border-top-color: #0c6cf2;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+
+@keyframes loading {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+
+.content {display:none; }
   

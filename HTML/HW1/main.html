@@ -9,25 +9,36 @@
     <link rel="stylesheet" href="dark_mode.css">
   </head>
   <body>
-    <section id="navigation_bar">
-      <img src="assets/icons/hamburger-svgrepo-com.svg" alt="ex" height="35">
-      <a href="main.html">Home</a>
-      <a href="historyBooks.html">history books</a>
-      <a href="contact_us.html">contact us</a>
-      <a href="books_list.html">view books genres</a>
-      <a href="main-ar.html">للعربيه</a>
-    </section>
-    <header>
-      <section>
-        <h1>Welcome to Book store</h1>
-        <h3>here you will be able to find any <em id="the_most_important">knowldge you desire!</em></h3>
+    <div class="loading">
+      <div align="center" style="position: absolute; margin-top: 63px; text-align: center; font-size: 18px; font-family: sans-serif; font-weight: 550; color: #fafafd;">Loading...
+      </div>
+    </div>
+    <div class="content">
+      <section id="navigation_bar">
+        <img src="assets/icons/hamburger-svgrepo-com.svg" alt="ex" height="35">
+        <a href="main.html">Home</a>
+        <a href="historyBooks.html">history books</a>
+        <a href="contact_us.html">contact us</a>
+        <a href="books_list.html">view books genres</a>
+        <a href="main-ar.html">للعربيه</a>
       </section>
-    </header>
-    <img src="assets/books.jpg" alt="books image" height="500" />
-    <h4>
-      this website will <em>NEVER</em> dissapoint you with the resources it has
-    </h4>
-    <div><a href="books_list.html">view book genres</a></div>
-    <a href="contact_us.html">contact us</a>
+      <header>
+        <section>
+          <h1>Welcome to Book store</h1>
+          <h3>here you will be able to find any <em id="the_most_important">knowldge you desire!</em></h3>
+        </section>
+      </header>
+      <img src="assets/books.jpg" alt="books image" height="500" />
+      <h4>
+        this website will <em>NEVER</em> dissapoint you with the resources it has
+      </h4>
+      <div><a href="books_list.html">view book genres</a></div>
+      <a href="contact_us.html">contact us</a>
+    </div>
+    <script>
+      const loading = document.querySelector('.loading');
+const content = document.querySelector('.content');
+setTimeout(()=>{loading.style.display="none";content.style.display="block";}, 2000)
+    </script>
   </body>
 </html>
