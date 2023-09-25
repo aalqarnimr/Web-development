@@ -1,7 +1,7 @@
 body {
     background: var(--bg-color-mobile, #F3F3F3);
     color: rgb(0, 0, 0);
-    
+
 }
 
 body a {
@@ -104,13 +104,12 @@ tr:hover {
 /* Style the links inside the navigation bar */
 #navigation_bar a {
     display: inline-block;
-    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    cursor:auto;
+    cursor: auto;
 }
 
 /* Change the color of links on hover */
@@ -124,22 +123,110 @@ tr:hover {
     background-color: #04AA6D;
     color: white;
 }
+
 #navigation_bar a:first-child {
     text-decoration: underline;
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: lightcoral;
 }
-tr:nth-child(odd){
+
+tr:nth-child(odd) {
     background-color: lightgrey;
 }
-::selection{
+
+::selection {
     background: rgba(255, 0, 0, 0.226);
 }
+
 input {
     height: 20px;
     border-color: lightgray;
 }
+
 input#name {
     height: 50px;
+}
+
+.featuredB {
+    margin-top: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-left: 1.5rem;
+    display: flex;
+    width: 25.375rem;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.featuredB div {
+    width: 30.4375rem;
+    height: 10.125rem;
+    flex-shrink: 0;
+    border-radius: 0.8015rem;
+    background: var(--bg-color-website, #FFF);
+
+}
+
+.featured_name {
+    display: flex;
+    width: 25.375rem;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--Text, #0D0842);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85494rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 1.34rem 0rem 1.33rem 2.14rem;
+}
+
+.featured_text {
+    width: 19.5535rem;
+    height: 8.261rem;
+    flex-shrink: 0;
+}
+
+.fLine {
+    display: block;
+    margin-left: 2rem;
+    width: 2.49488rem;
+    height: 0.10688rem;
+    background-color: #FFCE1A;
+}
+
+.Pdescription {
+    width: 19.26044rem;
+    color: var(--Text, #0D0842);
+    font-family: Nunito Sans;
+    font-size: 0.74806rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 1.33rem 9.28rem 1.06rem 1.9rem;
+}
+
+.featuredB img {
+    position: absolute;
+    margin: 0.53rem 0.5rem 0.53rem 23.2rem;
+    width: 6.73619rem;
+    height: 9.05919rem;
+    flex-shrink: 0;
+    border-radius: 0.29325rem;
+    background: url(<path-to-image>), lightgray 0px -6.463px / 100% 108.917% no-repeat;
+}
+
+.top_selling select {
+    display: flex;
+    width: 10.625rem;
+    height: 2rem;
+    padding: 0.3125rem 0.625rem;
+    align-items: center;
+    gap: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.45213rem;
+    border: 1px solid rgba(0, 12, 102, 0.10);
+    background: rgba(234, 234, 234, 0.90);
+    backdrop-filter: blur(67.81915283203125px);
 }
