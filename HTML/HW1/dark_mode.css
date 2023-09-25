@@ -398,3 +398,9 @@ footer {
     margin-left: auto;
     margin-right: auto
 }
+.arabic {
+    font-family: 'Cairo', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+}
