@@ -398,11 +398,12 @@ footer {
     margin-left: auto;
     margin-right: auto
 }
+
 .arabic {
     font-family: 'Cairo', sans-serif;
-font-family: 'Libre Baskerville', serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 button {
@@ -416,54 +417,62 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     transition: background-color 0.5s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     transition: all 0.2s ease-in-out;
     background-color: #04AA6D;
-  }
-  #navigation_bar > img {
+}
+
+#navigation_bar>img {
     position: relative;
     top: 10px;
     margin-left: 10px;
     margin-left: 10px;
-  }
-  #navigation_bar > a {
+}
+
+#navigation_bar>a {
     opacity: 0;
-  }
-  #navigation_bar > img:hover{
+}
+
+#navigation_bar>img:hover {
     opacity: 1;
     transition: all 0.2s ease-in-out;
-  }
-  #navigation_bar a {
-    opacity: 0;
-      }
-  #navigation_bar:hover > a {
-    opacity: 1;
-  }
-  #navigation_bar a:first-of-type {
-    transition-delay: 0s;
-  }
-  
-  #navigation_bar a:nth-of-type(2) {
-    transition-delay: 0.1s;
-  }
-  
-  #navigation_bar a:nth-of-type(3) {
-    transition-delay: 0.2s;
-  }
-  #navigation_bar a:nth-of-type(4) {
-    transition-delay: 0.3s;
-  }
-  #navigation_bar a:nth-of-type(5) {
-    transition-delay: 0.4s;
-  }
+}
 
-  .loading {
+#navigation_bar a {
+    opacity: 0;
+}
+
+#navigation_bar:hover>a {
+    opacity: 1;
+}
+
+#navigation_bar a:first-of-type {
+    transition-delay: 0s;
+}
+
+#navigation_bar a:nth-of-type(2) {
+    transition-delay: 0.1s;
+}
+
+#navigation_bar a:nth-of-type(3) {
+    transition-delay: 0.2s;
+}
+
+#navigation_bar a:nth-of-type(4) {
+    transition-delay: 0.3s;
+}
+
+#navigation_bar a:nth-of-type(5) {
+    transition-delay: 0.4s;
+}
+
+.loading {
     display: flex;
     justify-content: center;
 }
-      
+
 .loading::after {
     content: "";
     width: 37.6px;
@@ -483,5 +492,23 @@ button {
 
 
 
-.content {display:none; }
-  
+.content {
+    display: none;
+}
+
+#external-links {
+    position: absolute;
+    margin-left: 1000px;
+}
+
+figcaption.bottom-left {
+    position: relative;
+    bottom: 50px;
+    left: 15px;
+    text-shadow: 0 0 1px #fff;
+}
+.date {
+    position: relative;
+    padding-top: 180px;
+    padding-left: 10px;
+}
