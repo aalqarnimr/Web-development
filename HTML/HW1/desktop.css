@@ -90,7 +90,8 @@ input#name {
 }
 
 .interactive_slider {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     gap: 5px;
     margin-top: 15px;
@@ -180,7 +181,7 @@ input#name {
     color: var(--Text, #0D0842);
     text-align: center;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 1.25vw;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -193,7 +194,7 @@ input#name {
     text-align: center;
     /* Mobile/Desc for news, product */
     font-family: Nunito Sans;
-    font-size: 12;
+    font-size: 1vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -212,7 +213,7 @@ input#name {
     text-align: center;
     /* Mobile/Buttons */
     font-family: Nunito Sans;
-    font-size: 16px;
+    font-size: 1vw;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -301,12 +302,13 @@ footer {
 header {
     /* background-color: #393280; */
     display: flex;
-    width: 26.875rem;
+    width: 100%;
     padding: 2.8125rem 1.5rem 1.25rem 1.5rem;
     align-items: center;
     gap: 2.8125rem;
     background: var(--bg-color-website, #FFF);
     text-transform: uppercase;
+    justify-content: space-around;
 }
 
 #search_input {
@@ -316,7 +318,8 @@ header {
     align-items: center;
     gap: 1.125rem;
     flex-shrink: 0;
-
+    position: relative;
+    left: 25%;
     border-radius: 0.75rem;
     background: #EAEAEA;
 }
@@ -334,3 +337,4 @@ header {
 body {
     background: var(--bg-color-mobile, #F3F3F3);
     color: rgb(0, 0, 0);}
+
