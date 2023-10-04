@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .cell {
+        font-family: sans-serif;
+        font-size: larger;
+        font-weight: bolder;
+        background-color: beige;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cell:hover {
+        background-color: blanchedalmond;
+      }
+
+      .row {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="turn">Now it's is <span>X</span> turn</h1>
+    <!-- Board -->
+    <div class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <button onclick="restart()">restart</button>
+      <script>
+        // decided which turn is it
+        let turn = "X";
+        let gameEnded = false;
+        let cell_clicked = ["", "", "", "", "", "", "", "", ""];
+        cells = document.querySelectorAll(".cell");
+        let numCells = 0;
+
+        // when we click on a cell add the letter
+        let board = document.getElementsByClassName("board")[0];
+        board.addEventListener("click", cellClicked);
+        let patterns = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 8],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6],
+        ];
+        function restart() {
+            window.location.reload();
+        }
+
+        function cellClicked(event) {
+          let cell = event.target;
+          let freeze = true;
+          var index = Array.from(cells).indexOf(cell);
+          if (cell_clicked[index] == "" && !gameEnded) {
+            cell.innerText = turn;
+            cell_clicked[index] = turn;
+            numCells += 1;
+            freeze = false;
+          }
+          for (pattern of patterns) {
+            gameEnded = true;
+            for (number of pattern) {
+              if (cell_clicked[number] != turn) {
+                gameEnded = false;
+              }
+            }
+            if (gameEnded == true) {
+              break;
+            }
+          }
+
+          if (gameEnded) {
+            turnLetter = document.querySelector("#turn");
+            turnLetter.innerText = turn + " is the winner!";
+          } else if (numCells === 9) {
+            turnLetter = document.querySelector("#turn");
+            turnLetter.innerText = "its a draw";
+          } else {
+            if (!freeze) {
+              turn = turn === "X" ? "O" : "X";
+
+              //change title
+              turnLetter = document.querySelector("#turn span");
+              turnLetter.innerText = turn;
+            }
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
