@@ -91,6 +91,12 @@
             cell_clicked[index] = turn;
             numCells += 1;
             freeze = false;
+            if (cell.innerText === "X"){
+                event.target.style.backgroundColor = 'lightgreen';
+            }
+            else{
+                event.target.style.backgroundColor = 'lightblue';
+            }
           }
           for (pattern of patterns) {
             gameEnded = true;
