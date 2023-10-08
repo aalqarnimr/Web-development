@@ -38,6 +38,13 @@
   </head>
 
   <body>
+    <section id="instruction" style="text-align: center">
+      <h2>
+        If you want to play with keyboard, you can change selected Cell with
+        arows and Enter to confirm
+      </h2>
+      <h3>if the game ends, press Enter to restart</h3>
+    </section>
     <h1 id="turn">Now it's is <span>X</span> turn</h1>
     <!-- Board -->
     <div class="board">
@@ -79,11 +86,54 @@
           [2, 4, 6],
         ];
         function restart() {
-            window.location.reload();
+          window.location.reload();
         }
+        let cellIndex = 0;
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowLeft" && ![0, 3, 6].includes(cellIndex)) {
+            cells[cellIndex].blur();
+            cellIndex--;
+            chooseCell(cells[cellIndex]);
+          } else if (
+            event.key === "ArrowRight" &&
+            ![2, 5, 8].includes(cellIndex)
+          ) {
+            cells[cellIndex].blur();
+            cellIndex++;
+            chooseCell(cells[cellIndex]);
+          } else if (
+            event.key === "ArrowUp" &&
+            ![0, 1, 2].includes(cellIndex)
+          ) {
+            cells[cellIndex].blur();
+            cellIndex -= 3;
+            chooseCell(cells[cellIndex]);
+          } else if (
+            event.key === "ArrowDown" &&
+            ![6, 7, 8].includes(cellIndex)
+          ) {
+            cells[cellIndex].blur();
+            cellIndex+=3;
+            chooseCell(cells[cellIndex]);
+          } else if (event.key === "Enter") {
+            if (!gameEnded){
+              playGame(cells[cellIndex],cells[cellIndex]);
+            }
+            else{
+              restart();
+            }
+          }
+          cells[cellIndex].focus();
+          console.log(cellIndex);
+        });
 
         function cellClicked(event) {
           let cell = event.target;
+          playGame(cell,event.target);
+        }
+
+        function playGame(cell,choosen){
           let freeze = true;
           var index = Array.from(cells).indexOf(cell);
           if (cell_clicked[index] == "" && !gameEnded) {
@@ -91,11 +141,10 @@
             cell_clicked[index] = turn;
             numCells += 1;
             freeze = false;
-            if (cell.innerText === "X"){
-                event.target.style.backgroundColor = 'lightgreen';
-            }
-            else{
-                event.target.style.backgroundColor = 'lightblue';
+            if (cell.innerText === "X") {
+              choosen.style.backgroundColor = "lightgreen";
+            } else {
+              choosen.style.backgroundColor = "lightblue";
             }
           }
           for (pattern of patterns) {
@@ -125,6 +174,13 @@
               turnLetter.innerText = turn;
             }
           }
+        }
+        function chooseCell(chosenCell){
+          for (cell of cells){
+            cell.style.backgroundColor ="beige";
+          }
+          chosenCell.style.backgroundColor = "blanchedalmond";
+
         }
       </script>
     </div>
