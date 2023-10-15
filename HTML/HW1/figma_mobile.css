@@ -72,7 +72,6 @@ input#name {
     height: 9.05919rem;
     flex-shrink: 0;
     border-radius: 0.29325rem;
-    background: url(<path-to-image>), lightgray 0px -6.463px / 100% 108.917% no-repeat;
 }
 
 .top_selling select {

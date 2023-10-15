@@ -30,11 +30,31 @@ let book4 = {
     "A criminal defense attorney who received a terminal diagnosis might be in danger of being murdered.",
   bookPrice: "10$",
 };
-let books = [book1,book2,book3,book4];
-interactiveSliderElement = document.querySelector("div.interactive_slider");
-for (book of books){
+
+const isbn = "0451526538";
+const apiUrl = `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&jscmd=data&format=json`;
+let apiBook;
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    apiBook = data[`ISBN:${isbn}`];
+    displayData(apiBook);
+  });
+
+function displayData(apiBook) {
+  book5 = {
+    bookImg: apiBook.cover.medium,
+    bookName: apiBook.title,
+    bookDescription:
+      "A criminal defense attorney who received a terminal diagnosis might be in danger of being murdered.",
+    bookPrice: "14$",
+  };
+
+  let books = [book1, book2, book3, book4,book5];
+  interactiveSliderElement = document.querySelector("div.interactive_slider");
+  for (book of books) {
     bookElement = document.createElement("div");
-    bookElement.setAttribute("class","Sproduct");
+    bookElement.setAttribute("class", "Sproduct");
     bookElement.innerHTML = `<div class="sInfo">
     <img
       src=${book.bookImg}
@@ -44,8 +64,6 @@ for (book of books){
         height: 209px;
         flex-shrink: 0;
         border-radius: 5px;
-        background: url(<path-to-image>),
-          lightgray 0px -11px / 100% 109.543% no-repeat;
       "
     />
     <figcaption class="bottom-left" style="position: absolute; bottom: 350px; left: 50px; color: aqua;">A.A.Q</figcaption>
@@ -148,6 +166,6 @@ for (book of books){
       </svg>
     </div>
   </div>`;
-  interactiveSliderElement.append(bookElement);
+    interactiveSliderElement.append(bookElement);
+  }
 }
-
