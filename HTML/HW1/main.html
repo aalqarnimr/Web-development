@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Book store</title>
-    <meta name="description" content="A website that sells various books in diffrent fields" >
-    <meta name="keywords" content="Books, authors, stories, history books">
-    <meta name="author" content="ahmad ali">
-    <link rel="stylesheet" href="dark_mode.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="screensaver.js"></script>
+    <meta
+      name="description"
+      content="A website that sells various books in diffrent fields"
+    />
+    <meta name="keywords" content="Books, authors, stories, history books" />
+    <meta name="author" content="ahmad ali" />
+    <link rel="stylesheet" href="dark_mode.css" />
+    <link rel="stylesheet" type="text/css" href="screensaver.css" />
+    l
   </head>
   <body>
     <div class="loading">
-      <div align="center" style="position: absolute; margin-top: 63px; text-align: center; font-size: 18px; font-family: sans-serif; font-weight: 550; color: #fafafd;">Loading...
-      </div>
+      <div
+      align="center"
+      style="
+          position: absolute;
+          margin-top: 63px;
+          text-align: center;
+          font-size: 18px;
+          font-family: sans-serif;
+          font-weight: 550;
+          color: #fafafd;
+          "
+      >
+      Loading...
     </div>
+  </div>
+  <div id="screensaver" style="height: 100%; width: 100%"></div>
     <div class="content">
       <section id="navigation_bar">
-        <img src="assets/icons/burger.png" alt="ex" height="35">
+        <img src="assets/icons/burger.png" alt="ex" height="35" />
         <a href="main.html">Home</a>
         <a href="historyBooks.html">history books</a>
         <a href="contact_us.html">contact us</a>
@@ -26,23 +46,31 @@
       <header>
         <section>
           <h1>Welcome to Book store</h1>
-          <h3>here you will be able to find any <em id="the_most_important">knowldge you desire!</em></h3>
+          <h3>
+            here you will be able to find any
+            <em id="the_most_important">knowldge you desire!</em>
+          </h3>
         </section>
       </header>
-      <img src="assets/books.jpg" alt="books image" width="480"/>
+      <img src="assets/books.jpg" alt="books image" width="480" />
       <figcaption class="bottom-left">A.A.Q</figcaption>
       <h4>
-        this website will <em>NEVER</em> dissapoint you with the resources it has
+        this website will <em>NEVER</em> dissapoint you with the resources it
+        has
       </h4>
+      <div id="screensaver"></div>
       <nav id="external-links">
         <div><a href="books_list.html">view book genres</a></div>
         <a href="contact_us.html">contact us</a>
       </nav>
     </div>
     <script>
-      const loading = document.querySelector('.loading');
-const content = document.querySelector('.content');
-setTimeout(()=>{loading.style.display="none";content.style.display="block";}, 2000)
+      const loading = document.querySelector(".loading");
+      const content = document.querySelector(".content");
+      setTimeout(() => {
+        loading.style.display = "none";
+        content.style.display = "block";
+      }, 2000);
     </script>
   </body>
 </html>
