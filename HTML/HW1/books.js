@@ -1,27 +1,31 @@
-let book1 = {
-  bookImg:
-    "https://storage.googleapis.com/du-prd/books/images/9780316572101.jpg",
-  bookName: "THE RUNNING GRAVE",
-  bookDescription:
-    "The seventh book in the Cormoran Strike series. Strike's business partner, Robin Ellacott, goes inside a cult to rescue someone who has joined it.",
-  bookPrice: "10$",
-};
-let book2 = {
-  bookImg:
-    "https://storage.googleapis.com/du-prd/books/images/9780525954996.jpg",
-  bookName: "THE ARMOR OF LIGHT",
-  bookDescription:
-    "The fifth book in the Kingsbridge series. Change and turmoil affect various aspects of society in the latter part of the 18th century.",
-  bookPrice: "15$",
-};
-let book3 = {
-  bookImg:
-    "https://storage.googleapis.com/du-prd/books/images/9781649374042.jpg",
-  bookName: "FOURTH WING",
-  bookDescription:
-    "Violet Sorrengail is urged by the commanding general, who also is her mother, to become a candidate for the elite dragon riders.",
-  bookPrice: "9$",
-};
+class Book {
+  constructor(bookImg, bookName, bookDescription, bookPrice) {
+    this.bookImg = bookImg;
+    this.bookName = bookName;
+    this.bookDescription = bookDescription;
+    this.bookPrice = bookPrice;
+  }
+}
+const bookInstance1 = new Book(
+  "https://storage.googleapis.com/du-prd/books/images/9780316572101.jpg",
+  "THE RUNNING GRAVE",
+  "The seventh book in the Cormoran Strike series. Strike's business partner, Robin Ellacott, goes inside a cult to rescue someone who has joined it.",
+  "10$"
+);
+const bookInstance2 = new Book(
+  "https://storage.googleapis.com/du-prd/books/images/9781649374042.jpg",
+  "FOURTH WING",
+  "Violet Sorrengail is urged by the commanding general, who also is her mother, to become a candidate for the elite dragon riders.",
+  "9$"
+);
+const bookInstance3 = new Book(
+  "https://storage.googleapis.com/du-prd/books/images/9780525954996.jpg",
+  "THE ARMOR OF LIGHT",
+
+  "The fifth book in the Kingsbridge series. Change and turmoil affect various aspects of society in the latter part of the 18th century.",
+  "15$"
+);
+console.log(bookInstance1);
 let book4 = {
   bookImg:
     "https://storage.googleapis.com/du-prd/books/images/9780316405690.jpg",
@@ -50,7 +54,7 @@ function displayData(apiBook) {
     bookPrice: "14$",
   };
 
-  let books = [book1, book2, book3, book4,book5];
+  let books = [bookInstance1, bookInstance2, bookInstance3, book4, book5];
   interactiveSliderElement = document.querySelector("div.interactive_slider");
   for (book of books) {
     bookElement = document.createElement("div");
