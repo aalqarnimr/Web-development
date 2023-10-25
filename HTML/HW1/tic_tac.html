@@ -95,7 +95,7 @@
 
         function navigateCells(value) {
           cells[cellIndex].blur();
-          cellIndex+=value;
+          cellIndex += value;
           chooseCell(cells[cellIndex]);
         }
 
@@ -150,11 +150,11 @@
           }
           for (pattern of patterns) {
             gameEnded = true;
-            for (number of pattern) {
+            pattern.forEach((number) => {
               if (cell_clicked[number] != turn) {
                 gameEnded = false;
               }
-            }
+            });
             if (gameEnded == true) {
               break;
             }
@@ -177,9 +177,9 @@
           }
         }
         function chooseCell(chosenCell) {
-          for (cell of cells) {
+          Array.from(cells).forEach((cell) => {
             cell.style.backgroundColor = "beige";
-          }
+          });
           chosenCell.style.backgroundColor = "blanchedalmond";
         }
       </script>
