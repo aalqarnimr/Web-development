@@ -74,7 +74,10 @@
 
         // when we click on a cell add the letter
         let board = document.getElementsByClassName("board")[0];
-        board.addEventListener("click", cellClicked);
+        board.addEventListener("click", (event) => {
+          let cell = event.target;
+          playGame(cell, event.target);
+        });
         let patterns = [
           [0, 1, 2],
           [3, 4, 5],
@@ -90,50 +93,48 @@
         }
         let cellIndex = 0;
 
+        function navigateCells(value) {
+          cells[cellIndex].blur();
+          cellIndex+=value;
+          chooseCell(cells[cellIndex]);
+        }
+
         document.addEventListener("keydown", function (event) {
           if (event.key === "ArrowLeft" && ![0, 3, 6].includes(cellIndex)) {
-            cells[cellIndex].blur();
-            cellIndex--;
-            chooseCell(cells[cellIndex]);
+            navigateCells(-1);
           } else if (
             event.key === "ArrowRight" &&
             ![2, 5, 8].includes(cellIndex)
           ) {
-            cells[cellIndex].blur();
-            cellIndex++;
-            chooseCell(cells[cellIndex]);
+            navigateCells(1);
           } else if (
             event.key === "ArrowUp" &&
             ![0, 1, 2].includes(cellIndex)
           ) {
-            cells[cellIndex].blur();
-            cellIndex -= 3;
-            chooseCell(cells[cellIndex]);
+            navigateCells(-3);
           } else if (
             event.key === "ArrowDown" &&
             ![6, 7, 8].includes(cellIndex)
           ) {
-            cells[cellIndex].blur();
-            cellIndex+=3;
-            chooseCell(cells[cellIndex]);
+            navigateCells(3);
           } else if (event.key === "Enter") {
-            if (!gameEnded){
-              playGame(cells[cellIndex],cells[cellIndex]);
-            }
-            else{
+            if (!gameEnded) {
+              playGame(cells[cellIndex], cells[cellIndex]);
+            } else {
               restart();
             }
           }
           cells[cellIndex].focus();
           console.log(cellIndex);
         });
+        //already Done here->
+        // function cellClicked(event) {
+        //   let cell = event.target;
+        //   playGame(cell, event.target);
+        // }
+        //to here;
 
-        function cellClicked(event) {
-          let cell = event.target;
-          playGame(cell,event.target);
-        }
-
-        function playGame(cell,choosen){
+        function playGame(cell, choosen) {
           let freeze = true;
           var index = Array.from(cells).indexOf(cell);
           if (cell_clicked[index] == "" && !gameEnded) {
@@ -175,12 +176,11 @@
             }
           }
         }
-        function chooseCell(chosenCell){
-          for (cell of cells){
-            cell.style.backgroundColor ="beige";
+        function chooseCell(chosenCell) {
+          for (cell of cells) {
+            cell.style.backgroundColor = "beige";
           }
           chosenCell.style.backgroundColor = "blanchedalmond";
-
         }
       </script>
     </div>
