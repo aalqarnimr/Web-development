@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dark_mode.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>History books</title>
   </head>
   <body>
@@ -19,7 +22,7 @@
           <th>Availability</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="root">
         <tr class="top">
           <td>The Lessons of History</td>
           <td>8.7/10</td>
@@ -63,5 +66,57 @@
       <p>all contents here are protected with copyright laws</p>
       <a href="contact_us.html">contact us</a>
     </footer>
+    <script type="text/babel">
+      function BookListElement(name,rating, pNumber,available) {
+        return <tr>
+          <td>{name}</td>
+          <td>{rating}/10</td>
+          <td>{pNumber} pages</td>
+          <td>{isAvailable(available)}</td>
+        </tr>
+      }
+      function isAvailable(bool){
+        if (bool){
+          return "Available";
+        }
+        return "Unavailable";
+      }
+
+      const books = [
+        {
+          name: "The Lessons of History",
+          rating: "8.9",
+          pNumber: 445,
+          available: true,
+        },
+        {
+          name: "WWW learn",
+          rating: "7.9",
+          pNumber: 376,
+          available: true,
+        },
+        {
+          name: "Truthful",
+          rating: "6.7",
+          pNumber: 783,
+          available: false,
+        },
+        {
+          name: "Algebra",
+          rating: "9.2",
+          pNumber: 913,
+          available: true,
+        },
+      ];
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+
+      const bookElements = books.map((book) => (
+        <BookListElement key={book.name} {...book} />
+      ));
+      console.log(bookElements[0]);
+      root.render(bookElements[0])
+    </script>
   </body>
 </html>
