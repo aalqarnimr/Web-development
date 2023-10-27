@@ -108,6 +108,10 @@
           available: true,
         },
       ];
+      function ListElements(){
+        return BookListElement(books[0].name,books[0].rating,books[0].pNumber,books[0].available);
+      }
+
 
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
@@ -115,8 +119,8 @@
       const bookElements = books.map((book) => (
         <BookListElement key={book.name} {...book} />
       ));
-      console.log(bookElements[0]);
-      root.render(bookElements[0])
+      console.log(ListElements);
+      root.render(<ListElements />)
     </script>
   </body>
 </html>
