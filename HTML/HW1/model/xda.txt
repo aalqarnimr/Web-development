@@ -1,0 +1,7 @@
+page URL: https://www.xda-developers.com/
+Remote Address: 52.5.96.96:443
+HTTP requests: 109 requests
+-200 OK
+-307 Temporary Redirect
+largest file https://www.xda-developers.com/ 194KB
+time: 1.47 s
