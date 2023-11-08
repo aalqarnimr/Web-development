@@ -10,25 +10,15 @@ async function copyFromTo(sourceDir, targetDir, extensions) {
   for (const file of files) {
     const ext = path.extname(file).toLowerCase();
     if (extensions.includes(ext)) {
-      const sourceFilePath = path.join(sourceDir, file);
-      const targetFilePath = path.join(targetDir, file);
-      await copyFile(sourceFilePath, targetFilePath);
+      const source = path.join(sourceDir, file);
+      const target = path.join(targetDir, file);
+      await copyFile(source, target);
       console.log(`copied ${file} to ${targetDir}`);
     }
   }
 }
 
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-readline.question("type file location: ", (targetName) => {
-  readline.question("type file destination: ", (destinationName) => {
-    const allowedFiles = [".txt", ".jpg"];
-    copyFromTo(targetName, destinationName, allowedFiles);
-    console.log(
-      `Files moved succesfully`);
-    readline.close();
-  });
-});
+const sourceFolder = process.argv[2];
+const destinationFolder = process.argv[3];
+const files = ['.txt', '.png'];
+copyFromTo(sourceFolder, destinationFolder, files);
