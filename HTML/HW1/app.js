@@ -4,16 +4,20 @@ const port = 4000;
 const path = require('path');
 
 app.use(express.static(__dirname));
+const mainRouter = express.Router();
+const booksRouter = express.Router();
 
-app.get('/', (req, res) => {
+mainRouter.get('/', (req, res) => {
     res.sendFile('main.html', {root: __dirname })
-    res.sendFile('dark_mode.css', {root: __dirname })
 });
+booksRouter.get('/', (req, res) => {
+    res.sendFile('books_list.html', {root: __dirname })
+});
+
+app.use('/',mainRouter);
+app.use('/books_list',booksRouter);
+
 app.get('/dark_mode.css', (req, res) => {
-    res.sendFile('dark_mode.css', {root: __dirname })
-});
-app.get('/', (req, res) => {
-    res.sendFile('main.html', {root: __dirname })
     res.sendFile('dark_mode.css', {root: __dirname })
 });
 
